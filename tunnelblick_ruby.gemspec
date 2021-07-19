@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'tunnelblick_ruby'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.summary     = "Provides tools for interacting with Tunnelblick using ruby"
   s.description = "Provides tools for interacting with Tunnelblick using ruby"
   s.authors     = ["Matt Simon"]
@@ -11,5 +11,5 @@ Gem::Specification.new do |s|
   ]
   s.homepage    =
     ''
-  s.license       = 'GNU GPL'
+  s.license       = 'NGPL'
 end
