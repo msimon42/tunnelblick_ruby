@@ -1,4 +1,10 @@
 class VpnService
+  attr_reader :address
+
+  def initialize
+    @address = nil
+  end
+  
   def connect(address)
       @address = address
       system(
