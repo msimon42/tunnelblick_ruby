@@ -5,7 +5,10 @@ Gem::Specification.new do |s|
   s.description = "Provides tools for interacting with Tunnelblick using ruby"
   s.authors     = ["Matt Simon"]
   s.email       = 'dev.msimon@gmail.com'
-  s.files       = []
+  s.files       = [
+    'lib/tunnelblick_ruby.rb',
+    'lib/vpn_service.rb'
+  ]
   s.homepage    =
     ''
   s.license       = 'GNU GPL'
