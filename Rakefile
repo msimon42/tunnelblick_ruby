@@ -16,7 +16,7 @@ namespace :tunnelblick do
 
     args = opts.order!(ARGV) {}
     opts.parse!(args)
-    unless connected?
+    unless TunnelblickRb.connected?
       exit 0 if initiate_connection(args[1])
       raise 'Failed to connect.'
     end
@@ -24,7 +24,7 @@ namespace :tunnelblick do
   end
 
   task :disconnect do
-    if connected?
+    if TunnelblickRb.connected?
       exit 0 if end_connection
       raise 'Failed to disconnect.'
     end
@@ -38,16 +38,16 @@ end
 
 def initiate_connection(address)
   begin
-    TunnelblickRb.new.start(address)
+    TunnelblickRb.start(address)
     return true
   rescue
     return false
   end
 end
 
-def end_connection
+def end_connection(address)
   begin
-    TunnelblickRb.new.stop
+    TunnelblickRb.stop(address)
     return true
   rescue
     return false
