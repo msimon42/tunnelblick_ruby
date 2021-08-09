@@ -35,19 +35,6 @@ end
 
 
 ## HELPER METHODS ##
-def connected?
-
-    output = `
-        osascript <<APPLESCRIPT
-        tell application "Tunnelblick"
-           get state of first configuration
-           return result
-        end tell
-        APPLESCRIPT
-    `
-
-  return output == "CONNECTED\n"
-end
 
 def initiate_connection(address)
   begin
