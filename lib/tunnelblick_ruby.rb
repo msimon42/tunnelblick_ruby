@@ -1,6 +1,6 @@
-require 'vpn_service'
+require_relative 'vpn_service'
 
-class Tunnelblick
+class TunnelblickRb
   :attr_reader
 
   def initialize
@@ -21,5 +21,5 @@ class Tunnelblick
 
   def stop
     @service.disconnect
-  end      
+  end
 end
