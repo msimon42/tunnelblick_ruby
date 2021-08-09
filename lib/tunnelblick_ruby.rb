@@ -19,7 +19,7 @@ class TunnelblickRb
     @service.switch(address)
   end
 
-  def stop
-    @service.disconnect
+  def stop(address)
+    @service.disconnect(address)
   end
 end
