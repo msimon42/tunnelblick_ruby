@@ -17,13 +17,13 @@ class VpnService
     return "Connected to #{address}"
   end
 
-  def self.disconnect
+  def self.disconnect(address)
     raise 'No connection exists' unless connected?
     system(
       %x{
           osascript <<APPLESCRIPT
           tell application "Tunnelblick"
-             disconnect "#{@address}"
+             disconnect "#{address}"
           end tell
           APPLESCRIPT}
     )
