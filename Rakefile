@@ -23,9 +23,22 @@ namespace :tunnelblick do
     raise 'Connection already exists!'
   end
 
-  task :disconnect do
+  task :disconnect, [:address] do |t, args|
+    options = {}
+    opts = OptionParser.new
+    opts.banner = "Close VPN Connection"
+
+    opts.on("address") { |a|
+      options[:address] = a
+    }
+
+    args = opts.order!(ARGV) {}
+    opts.parse!(args)
     if TunnelblickRb.connected?
-      exit 0 if end_connection
+      if end_connection(args[1])
+        puts 'Disconnected!'
+        exit 0
+      end
       raise 'Failed to disconnect.'
     end
     raise 'Connection does not currently exist!'
