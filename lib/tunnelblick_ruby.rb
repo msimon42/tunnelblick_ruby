@@ -1,25 +1,19 @@
 require_relative 'vpn_service'
 
 class TunnelblickRb
-  :attr_reader
-
-  def initialize
-    @service = VpnService.new
+  def self.connected?
+    VpnService.connected?
   end
 
-  def connected?
-    @service.address != nil
+  def self.start(address)
+    VpnService.connect(address)
   end
 
-  def start(address)
-    @service.connect(address)
+  def self.switch_ip(address)
+    VpnService.switch(address)
   end
 
-  def switch_ip(address)
-    @service.switch(address)
-  end
-
-  def stop(address)
-    @service.disconnect(address)
+  def self.stop(address)
+    VpnService.disconnect(address)
   end
 end
