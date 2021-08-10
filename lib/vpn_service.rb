@@ -27,7 +27,6 @@ class VpnService
           end tell
           APPLESCRIPT}
     )
-    @address = nil
     return 'Disconnected'
   end
 
